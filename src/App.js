@@ -31,7 +31,7 @@ class App extends React.Component{
     )
     return (
       <Container>
-        <Navegacion titulo='primer sitio compras'/>
+        <Navegacion titulo='Sitio de compras'/>
         <Row>
           {arregloComponentes}
         </Row>

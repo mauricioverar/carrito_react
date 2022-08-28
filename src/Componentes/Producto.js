@@ -9,7 +9,7 @@ class Producto extends React.Component{
     return(
       <Col sm='4'>
       <Card className='Card' body outline color='primary'>
-        aprendiendo react {this.props.stock}
+        Producto {this.props.stock}
         <CardImg src={this.props.imagen}/>
         <CardBody>
           <CardTitle>{this.props.titulo} </CardTitle>
