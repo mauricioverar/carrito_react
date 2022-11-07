@@ -15,7 +15,7 @@ class Producto extends React.Component{
       <>
       <Col sm='4'>
       <Card className='Card' body outline color='primary'>
-        Producto {this.props.stock}
+        {/* Producto {this.props.stock} */}
         <CardImg src={this.props.imagen}/>
         <CardBody>
           <CardTitle>{this.props.titulo} </CardTitle>

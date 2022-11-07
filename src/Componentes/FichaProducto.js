@@ -1,7 +1,7 @@
 import React from 'react' // , { useState } 
 import { Modal, Button, Container, ModalHeader, ModalBody, ModalFooter, CardImg } from 'reactstrap'
 import { listaCarrito } from '../listaCarrito.json'
-import { listaProductos } from '../listaProductos.json'
+// import { listaProductos } from '../listaProductos.json'
 
 class FichaProducto extends React.Component {
   constructor(props) {
@@ -47,6 +47,7 @@ class FichaProducto extends React.Component {
       this.setState(prevState => ({
         stock: prevState.stock - 1
       }))
+      
       /* listaProductos.push({
         "stock": this.state.stock // "clave": valor
       })
@@ -61,9 +62,9 @@ class FichaProducto extends React.Component {
       <> 
       {/* frakwin */}
       <Container>
+        <h6> stock: {this.state.stock}</h6> 
         <Button onClick={this.toggle}>Ver ficha</Button>
 
-        <h2> {this.state.stock}</h2> 
 
         <Modal isOpen={this.state.modal}>
           {/* React en jov pro */} R jpro
