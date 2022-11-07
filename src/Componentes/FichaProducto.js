@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react' // , { useState } 
 import { Modal, Button, Container, ModalHeader, ModalBody, ModalFooter, CardImg } from 'reactstrap'
 import { listaCarrito } from '../listaCarrito.json'
 import { listaProductos } from '../listaProductos.json'
@@ -13,8 +13,12 @@ class FichaProducto extends React.Component {
       stock: props.props.stock
     }
 
+    // console.log('props.props.stock ', props.props.stock)
+
     this.toggle = this.toggle.bind(this) // compartir con demas métodos
     this.agregarCarrito = this.agregarCarrito.bind(this)
+
+    // const [count, setCount] = useState(0); // count=0
   }
 
   toggle() {
@@ -25,7 +29,13 @@ class FichaProducto extends React.Component {
 
   agregarCarrito() {
     
+    this.setState({ count: this.state.count - 1 });
+
+    // console.log('first')
+    // console.log('state.stock ', this.state.stock)
     if (this.state.stock > 0) {
+      
+      // console.log('>0')
       listaCarrito.push({
         "titulo": this.props.props.titulo,
         "precio": this.props.props.precio
@@ -38,19 +48,25 @@ class FichaProducto extends React.Component {
         stock: prevState.stock - 1
       }))
       listaProductos.push({
-        "stock": this.state.stock
+        "stock": this.state.stock // "clave": valor
       })
-      
+
     }
   }
 
   render() {
+    // console.log('new state.stock ', this.state.stock)
+
     return (
+      <> 
+      {/* frakwin */}
       <Container>
         <Button onClick={this.toggle}>Ver ficha</Button>
 
+        {/* <h2> {this.state.stock}</h2>  */}
+
         <Modal isOpen={this.state.modal}>
-          React en jov pro
+          {/* React en jov pro */} R jpro
           <ModalHeader>{this.props.props.titulo}</ModalHeader>
 
           <ModalBody>
@@ -63,12 +79,16 @@ class FichaProducto extends React.Component {
           </ModalBody>
 
           <ModalFooter className='modalFooter'>
-            <Button color='primary' onClick={this.agregarCarrito}>Agregar</Button>
+            {/* <Button color='primary' onClick={this.agregarCarrito}>Agregar</Button> */}
+            <Button color='primary' onMouseUp={this.agregarCarrito} onClick={this.props.props.boton} >Agregar</Button>
             <Button color='secondary' onClick={this.toggle}>Volver</Button>
+            {/* {this.props.props.boton} */}
+            
           </ModalFooter>
 
         </Modal>
       </Container>
+      </>
     )
   }
 }
