@@ -9,7 +9,7 @@ class Producto extends React.Component{
   // }
 
   render(){
-    // console.log('this.props.stock ', this.props.stock)
+    console.log('this.props.stock ', this.props.stock)
         
     return(
       <>

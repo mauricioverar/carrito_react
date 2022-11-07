@@ -47,10 +47,10 @@ class FichaProducto extends React.Component {
       this.setState(prevState => ({
         stock: prevState.stock - 1
       }))
-      listaProductos.push({
+      /* listaProductos.push({
         "stock": this.state.stock // "clave": valor
       })
-
+ */
     }
   }
 
@@ -63,7 +63,7 @@ class FichaProducto extends React.Component {
       <Container>
         <Button onClick={this.toggle}>Ver ficha</Button>
 
-        {/* <h2> {this.state.stock}</h2>  */}
+        <h2> {this.state.stock}</h2> 
 
         <Modal isOpen={this.state.modal}>
           {/* React en jov pro */} R jpro
