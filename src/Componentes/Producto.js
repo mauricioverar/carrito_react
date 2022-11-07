@@ -9,14 +9,14 @@ class Producto extends React.Component{
   // }
 
   render(){
-    console.log('this.props.stock ', this.props.stock)
+    // console.log('this.props.stock ', this.props.stock)
         
     return(
       <>
       <Col sm='4'>
       <Card className='Card' body outline color='primary'>
         {/* Producto {this.props.stock} */}
-        <CardImg src={this.props.imagen}/>
+        <CardImg src={this.props.imagen} alt='imagen' className='Card-img'/>
         <CardBody>
           <CardTitle>{this.props.titulo} </CardTitle>
           <CardSubtitle><b>Valor </b>{this.props.precio}</CardSubtitle>
