@@ -3,7 +3,6 @@ import {NavItem, Nav, NavbarBrand, Navbar} from 'reactstrap'
 import Carro from './Carro'
 
 class Navegacion extends React.Component {
-  // constructor(props)
 
   render() {
     return(

@@ -1,4 +1,4 @@
-import React from 'react' // , { useState } 
+import React from 'react'
 import { Modal, Button, Container, ModalHeader, ModalBody, ModalFooter, CardImg } from 'reactstrap'
 import { listaCarrito } from '../listaCarrito.json'
 // import { listaProductos } from '../listaProductos.json'
@@ -17,8 +17,6 @@ class FichaProducto extends React.Component {
 
     this.toggle = this.toggle.bind(this) // compartir con demas métodos
     this.agregarCarrito = this.agregarCarrito.bind(this)
-
-    // const [count, setCount] = useState(0); // count=0
   }
 
   toggle() {
@@ -29,13 +27,9 @@ class FichaProducto extends React.Component {
 
   agregarCarrito() {
     
-    this.setState({ count: this.state.count - 1 });
-
-    // console.log('first')
+    // this.setState({ count: this.state.count - 1 });
     // console.log('state.stock ', this.state.stock)
     if (this.state.stock > 0) {
-      
-      // console.log('>0')
       listaCarrito.push({
         "titulo": this.props.props.titulo,
         "precio": this.props.props.precio
@@ -81,8 +75,11 @@ class FichaProducto extends React.Component {
 
           <ModalFooter className='modalFooter'>
             {/* <Button color='primary' onClick={this.agregarCarrito}>Agregar</Button> */}
-            <Button color='primary' onMouseUp={this.agregarCarrito} onClick={this.props.props.boton} >Agregar</Button>
-            <Button color='secondary' onClick={this.toggle}>Volver</Button>
+            <Button color='primary' onMouseUp={this.agregarCarrito}
+              onClick={this.props.props.boton} >Agregar</Button>
+              
+            <Button color='secondary'
+              onClick={this.toggle}>Volver</Button>
             {/* {this.props.props.boton} */}
             
           </ModalFooter>

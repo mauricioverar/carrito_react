@@ -6,27 +6,9 @@ import { Container, Row } from 'reactstrap';
 import { listaProductos } from './listaProductos.json';
 import Producto from './Componentes/Producto';
 import Navegacion from './Componentes/Navegacion';
-// import { useState, useEffect } from "react";
 
 function App() {
-  // console.log(listaProductos);
   const [count, setCount] = useState(0)
-
-  /* function App() {
-    const [tasks, setTasks] = useState([])
-
-    useEffect(() => {
-      setTasks(data)
-    }, [])
-
-    return (
-      <>
-      <Navegacion tasks/>
-      <Producto tasks= {tasks}/>
-
-      </>
-    )    
-  } */
 
   const arregloComponentes = listaProductos.map(
     (listaProductos, i) => {

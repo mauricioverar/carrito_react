@@ -1,8 +1,7 @@
-import React from "react"; // , { useState }
+import React from "react"
 import { Popover, PopoverHeader, PopoverBody, Table, Badge, Button } from 'reactstrap'
+import './Carro.css'
 import { listaCarrito } from '../listaCarrito.json'
-
-// const [cant_carro, setState] = useState(0)
 
 class Carro extends React.Component {
   constructor(props) {
@@ -10,11 +9,8 @@ class Carro extends React.Component {
     this.state = {
       popoverOpen: false,
       listaCarrito,
-      stock: listaCarrito.length,
-      cant: listaCarrito.length
+      stock: listaCarrito.length
     }
-
-    // console.log('cant_carro ', cant_carro)
 
     this.toggle = this.toggle.bind(this)
   }
@@ -26,10 +22,10 @@ class Carro extends React.Component {
   }
 
   render() {
-    // console.log('cant ', this.state.cant)
     // console.log('listaCarrito ', this.state.listaCarrito)
     // console.log('stock ', this.state.stock)
-
+    // (new Intl.NumberFormat('de-DE').format(number));
+    
     const arregloCarrito = this.state.listaCarrito.map(
       (listaCarrito, i) => {
 
@@ -84,7 +80,7 @@ class Carro extends React.Component {
                 <tr>
                   <td>Total</td>
                   <td></td>
-                  <td>{Total} CLP</td>
+                  <td className="Total">{(new Intl.NumberFormat('de-DE').format(Total))} CLP</td>
                 </tr>
               </tfoot>
             </Table>
